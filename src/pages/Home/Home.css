@@ -1,0 +1,23 @@
+/* 큰 화면에서의 스타일 */
+@media (min-width: 1200px) {
+    .custom-card-body {
+        width: 600px;
+        height: 250px;
+    }
+}
+
+/* 중간 크기 화면에서의 스타일 */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .custom-card-body {
+        width: 70%;
+        height: auto;
+    }
+}
+
+/* 작은 화면에서의 스타일 */
+@media (max-width: 767px) {
+    .custom-card-body {
+        width: 60%;
+        height: auto;
+    }
+}
