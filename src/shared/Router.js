@@ -9,7 +9,7 @@ export default function Router() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/category/:categoryName" element={<Category />} />
+        <Route path="/category/:id" element={<Category />} />
       </Routes>
     </BrowserRouter>
   );
