@@ -1,10 +1,13 @@
-import 'bootstrap/dist/css/bootstrap.css';
+import "bootstrap/dist/css/bootstrap.css";
 import Router from "./shared/Router";
+import { RecoilRoot } from "recoil";
 
 function App() {
   return (
-    <Router />
-  )
+    <RecoilRoot>
+      <Router />
+    </RecoilRoot>
+  );
 }
 
 export default App;
