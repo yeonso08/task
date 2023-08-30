@@ -1,13 +1,11 @@
 import Layout from "../../components/Layout/Layout";
 import Hero from "./Hero";
-import NewArrivals from "./NewArrivals";
 
-export default function Home() {
+export default function Category() {
   return (
     <>
       <Layout />
       <Hero />
-      <NewArrivals />
     </>
   );
 }
