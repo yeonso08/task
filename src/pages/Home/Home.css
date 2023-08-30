@@ -31,8 +31,7 @@
 }
 
 .scrollableRow::-webkit-scrollbar {
-    width: 0.6em;
-    height: 0.6em;
+    display: none; /* Chrome, Safari, Opera 스크롤바 숨김 */
 }
 
 .scrollableRow::-webkit-scrollbar-thumb {
