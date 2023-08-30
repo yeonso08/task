@@ -5,12 +5,11 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import axios from "axios";
-import "./Home.css"; // CSS 파일을 import 합니다.
-import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
+import "./Home.css";
+import HeartIcon from "../../components/HeartIcon";
 
 function NewArrivals() {
   const [products, setProducts] = useState([]);
-  const [likedProducts, setLikedProducts] = useState({}); // 각 제품의 좋아요 상태를 저장
   const scrollableRef = useRef(null); // 1. 스크롤을 조정할 ref 생성
 
   useEffect(() => {
@@ -25,13 +24,6 @@ function NewArrivals() {
 
     fetchData();
   }, []);
-
-  const toggleLike = (productId) => {
-    setLikedProducts((prevState) => ({
-      ...prevState,
-      [productId]: !prevState[productId],
-    }));
-  };
 
   useEffect(() => {
     const scrollInterval = setInterval(() => {
@@ -85,17 +77,7 @@ function NewArrivals() {
                 <Card.Subtitle> {item.category}</Card.Subtitle>
                 <Card.Text>
                   ${item.price}
-                  {likedProducts[item.id] ? (
-                    <AiFillHeart
-                      style={{ float: "right", color: "red" }}
-                      onClick={() => toggleLike(item.id)}
-                    />
-                  ) : (
-                    <AiOutlineHeart
-                      style={{ float: "right" }}
-                      onClick={() => toggleLike(item.id)}
-                    />
-                  )}
+                  <HeartIcon productId={item.id} />
                 </Card.Text>
               </Card.Body>
             </Card>

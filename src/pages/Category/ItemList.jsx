@@ -5,11 +5,10 @@ import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
+import HeartIcon from "../../components/HeartIcon";
 
 function ItemList() {
   const { id } = useParams();
-  const [likedProducts, setLikedProducts] = useState({}); // 각 제품의 좋아요 상태를 저장
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -26,13 +25,6 @@ function ItemList() {
 
     fetchData();
   }, [id]);
-
-  const toggleLike = (productId) => {
-    setLikedProducts((prevState) => ({
-      ...prevState,
-      [productId]: !prevState[productId],
-    }));
-  };
 
   return (
     <Container fluid>
@@ -66,17 +58,7 @@ function ItemList() {
                 <Card.Subtitle> {item.category}</Card.Subtitle>
                 <Card.Text>
                   ${item.price}
-                  {likedProducts[item.id] ? (
-                    <AiFillHeart
-                      style={{ float: "right", color: "red" }}
-                      onClick={() => toggleLike(item.id)}
-                    />
-                  ) : (
-                    <AiOutlineHeart
-                      style={{ float: "right" }}
-                      onClick={() => toggleLike(item.id)}
-                    />
-                  )}
+                  <HeartIcon productId={item.id} />
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -84,6 +66,7 @@ function ItemList() {
         ))}
       </Row>
     </Container>
-  );}
+  );
+}
 
 export default ItemList;
