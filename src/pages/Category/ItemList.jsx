@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import HeartIcon from "../../components/HeartIcon";
 import StarIcon from "../../components/StarIcon";
+import { Link } from "react-router-dom";
 
 function ItemList() {
   const { id } = useParams();
@@ -47,17 +48,23 @@ function ItemList() {
             style={{ marginRight: "60px" }}
           >
             <Card style={{ width: "18rem", height: "500px", border: "none" }}>
-              <Card.Img
-                variant="top"
-                src={item.image}
-                style={{ height: "286px", backgroundColor: "#C4C4C4" }}
-              />
+              <Link to={`/products/${item.id}`}>
+                <Card.Img
+                  variant="top"
+                  src={item.image}
+                  style={{ height: "286px", backgroundColor: "#C4C4C4" }}
+                />
+              </Link>
               <Card.Body>
-                <Card.Title style={{ fontSize: "18px" }}>
+                <Card.Title
+                  style={{ fontSize: "18px", textDecoration: "none" }}
+                  as={Link}
+                  to={`/products/${item.id}`}
+                >
                   {item.title}
                 </Card.Title>
                 <Card.Subtitle> {item.category}</Card.Subtitle>
-                <Card.Subtitle style={{marginTop: "5px"}}>
+                <Card.Subtitle style={{ marginTop: "5px" }}>
                   <StarIcon rate={item.rating.rate} count={item.rating.count} />
                 </Card.Subtitle>
                 <Card.Text>
