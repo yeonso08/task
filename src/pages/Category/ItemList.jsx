@@ -6,6 +6,7 @@ import Row from "react-bootstrap/Row";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import HeartIcon from "../../components/HeartIcon";
+import StarIcon from "../../components/StarIcon";
 
 function ItemList() {
   const { id } = useParams();
@@ -56,6 +57,9 @@ function ItemList() {
                   {item.title}
                 </Card.Title>
                 <Card.Subtitle> {item.category}</Card.Subtitle>
+                <Card.Subtitle style={{marginTop: "5px"}}>
+                  <StarIcon rate={item.rating.rate} count={item.rating.count} />
+                </Card.Subtitle>
                 <Card.Text>
                   ${item.price}
                   <HeartIcon productId={item.id} />
