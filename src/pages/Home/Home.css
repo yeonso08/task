@@ -21,3 +21,22 @@
         height: auto;
     }
 }
+
+.scrollableRow {
+    display: flex;
+    flex-wrap: nowrap;  /* 이 부분을 추가하여 항목들이 줄바꿈되지 않게 합니다. */
+    overflow-x: auto;
+    scrollbar-width: thin; 
+    scrollbar-color: rgba(155, 155, 155, 0.5) transparent;
+}
+
+.scrollableRow::-webkit-scrollbar {
+    width: 0.6em;
+    height: 0.6em;
+}
+
+.scrollableRow::-webkit-scrollbar-thumb {
+    background-color: rgba(155, 155, 155, 0.5);
+}
+
+  
