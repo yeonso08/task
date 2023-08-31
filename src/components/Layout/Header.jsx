@@ -36,7 +36,7 @@ export default function Header() {
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
         <Navbar.Brand as={Link} to="/">
-          CORA'L
+          <h3 style={{color : "var(--color-primary)"}}>CORA'L</h3>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">

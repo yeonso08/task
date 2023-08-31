@@ -1,6 +1,6 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import "./Home.css"; // CSS 파일을 import 합니다.
+import "./Home.css";
 
 export default function Hero() {
   return (
@@ -11,7 +11,7 @@ export default function Hero() {
         style={{ height: "400px", borderRadius: "24px" }}
       />
       <Card.Body
-        className="custom-card-body" // className을 추가합니다.
+        className="custom-card-body"
         style={{
           position: "absolute",
           top: "50%",

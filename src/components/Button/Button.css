@@ -1,0 +1,14 @@
+.customButton {
+    border-color: var(--color-primary);
+    background-color: var(--color-bright);
+    color: var(--color-primary);
+    height: 44px;
+    width: 280px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.customButton:hover {
+    background-color: var(--color-primary);
+    color: var(--color-bright);
+}

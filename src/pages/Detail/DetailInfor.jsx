@@ -2,6 +2,7 @@ import React from "react";
 import StarIcon from "../../components/StarIcon";
 import { Row, Stack, Col, Card } from "react-bootstrap";
 import CounterBox from "../../components/CounterBox";
+import CustomButton from "../../components/Button/CustomButton";
 
 function DetailInfor({ productInfor }) {
   return (
@@ -89,6 +90,10 @@ function DetailInfor({ productInfor }) {
           </div>
         </Card.Body>
       </Card>
+      <div style={{ display: "flex"}}>
+     <CustomButton>Add To Bag</CustomButton>
+     <CustomButton style={{marginLeft: "30px"}}>Add To Wishlist</CustomButton>
+     </div>
     </Stack>
   );
 }
