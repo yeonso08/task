@@ -1,7 +1,5 @@
+import Image from "react-bootstrap/Image";
+
 export default function Footer() {
-    return (
-        <div>
-            footer
-        </div>
-    )
+  return <Image src="/footer.png" style={{ width: '100%', maxHeight: '300px' }} />;
 }
