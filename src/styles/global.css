@@ -1,0 +1,23 @@
+:root {
+    /* 폰트 */
+    --main-font: 'Inter', sans-serif;
+
+    /* 색상 */
+    --color-primary: #1B4B66;
+    --color-primary-tint: #639599;
+    --color-error: #B00020;
+    --color-highlight: #FF8C4B;
+    --color-dark: #13101E;
+    --color-bright: #FFFFFF;
+    --color-light-text: #B6B6B6;
+    --color-high-emphasis: #171520;
+    --color-low-emphasis: #626262;
+    --color-grey: #F1F1F1;
+    --color-accent: #F4F4F4;
+}
+
+body {
+    font-family: var(--main-font);
+}
+
+
