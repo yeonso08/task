@@ -33,10 +33,10 @@ export default function Header() {
   };
 
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg">
       <Container fluid>
         <Navbar.Brand as={Link} to="/">
-          <h3 style={{color : "var(--color-primary)"}}>CORA'L</h3>
+          <img src="/logo.png" alt="Logo"></img>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
@@ -46,9 +46,13 @@ export default function Header() {
             navbarScroll
           >
             {category.map((item) => (
-              <Nav.Link as={Link} to={`/category/${item}`}>
-              {item}
-            </Nav.Link>
+              <Nav.Link
+                style={{ color: "var(--color-high-emphasis)", fontWeight: 500, lineHeight: "18px"}}
+                as={Link}
+                to={`/category/${item}`}
+              >
+                {item}
+              </Nav.Link>
             ))}
             {/* 장바구니 만들 때 사용
             <NavDropdown title="Link" id="navbarScrollingDropdown">
