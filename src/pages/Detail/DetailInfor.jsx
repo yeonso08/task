@@ -13,8 +13,8 @@ function DetailInfor({ productInfor }) {
       </div>
       <div>
         <StarIcon
-          rate={productInfor.rating.rate}
-          count={productInfor.rating.count}
+          rate={productInfor?.rating?.rate}
+          count={productInfor?.rating?.count}
         />
       </div>
       <div>${productInfor.price}</div>
