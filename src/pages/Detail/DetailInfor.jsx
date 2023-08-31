@@ -90,7 +90,7 @@ function DetailInfor({ productInfor }) {
           </div>
         </Card.Body>
       </Card>
-      <div style={{ display: "flex" }}>
+      <div style={{ display: "flex", marginTop: "20px" }}>
         <CustomButton>Add To Bag</CustomButton>
         <CustomButton style={{ marginLeft: "30px" }}>
           Add To Wishlist

@@ -7,6 +7,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import DetailCard from "./DetailCard";
 import DetailInfor from "./DetailInfor";
+import DetailFooter from "./DetailFooter";
 
 function Detail() {
   const { id } = useParams();
@@ -32,9 +33,14 @@ function Detail() {
       <Layout />
       <Container>
         <Row>
-          <Col><DetailCard productImg={product.image}/></Col>
-          <Col><DetailInfor productInfor={product}/></Col>
+          <Col>
+            <DetailCard productImg={product.image} />
+          </Col>
+          <Col>
+            <DetailInfor productInfor={product} />
+          </Col>
         </Row>
+        <DetailFooter productDescrip={product.description} />
       </Container>
     </>
   );
