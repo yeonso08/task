@@ -52,6 +52,43 @@ function DetailInfor({ productInfor }) {
           <CounterBox />
         </span>
       </div>
+      {/* 쿠폰 카드 */}
+      <Card
+        style={{
+          height: "100px",
+          width: "400px",
+          borderColor: "var(--color-primary)",
+        }}
+      >
+        <Card.Body className="d-flex align-items-center justify-content-between">
+          <div>
+            <Card.Subtitle>
+              Get up to 30% Off on order <br /> value above $100
+            </Card.Subtitle>
+            <Card.Text style={{ color: "var(--color-primary)" }}>
+              Terms & Conditions
+            </Card.Text>
+          </div>
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <Card
+              style={{
+                backgroundColor: "var(--color-grey)",
+                border: "none",
+                height: "70px",
+                width: "120px",
+                margin: "0",
+              }}
+            >
+              <Card.Body className="d-flex flex-column align-items-center justify-content-center p-0">
+                <Card.Text style={{ color: "var(--color-low-emphasis)" }}>
+                  Use Code
+                </Card.Text>
+                <Card.Subtitle>ORDER100</Card.Subtitle>
+              </Card.Body>
+            </Card>
+          </div>
+        </Card.Body>
+      </Card>
     </Stack>
   );
 }
