@@ -27,7 +27,7 @@ function CounterBox({ onCountChange }) {
         justifyContent: "center",
         width: "80px",
         textAlign: "center",
-        borderColor: "var(--color-primary)"
+        borderColor: "var(--color-primary)",
       }}
     >
       <button

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import StarIcon from "../../components/StarIcon";
 import { Row, Stack, Col, Card } from "react-bootstrap";
 import CounterBox from "../../components/CounterBox";
@@ -7,6 +7,19 @@ import useCart from "../../hooks/useCart";
 
 function DetailInfor({ productInfor }) {
   const { addToCart } = useCart();
+  const [quantity, setQuantity] = useState(1);
+  const handleCountChange = (count) => {
+    setQuantity(count);
+  };
+
+  const handleAddToCart = () => {
+    const productWithQuantity = {
+      ...productInfor,
+      quantity: quantity,
+    };
+    addToCart(productWithQuantity);
+  };
+
   return (
     <Stack gap={3}>
       <div>
@@ -52,7 +65,7 @@ function DetailInfor({ productInfor }) {
       <div style={{ display: "flex" }}>
         Quantity:
         <span style={{ marginLeft: "20px" }}>
-          <CounterBox />
+          <CounterBox onCountChange={handleCountChange} />
         </span>
       </div>
       {/* 쿠폰 카드 */}
@@ -93,9 +106,7 @@ function DetailInfor({ productInfor }) {
         </Card.Body>
       </Card>
       <div style={{ display: "flex", marginTop: "20px" }}>
-        <CustomButton onClick={() => addToCart(productInfor)}>
-          Add To Bag
-        </CustomButton>
+        <CustomButton onClick={handleAddToCart}>Add To Bag</CustomButton>
         <CustomButton style={{ marginLeft: "30px" }}>
           Add To Wishlist
         </CustomButton>
