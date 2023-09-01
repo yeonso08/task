@@ -20,9 +20,6 @@ function StarIcon({ rate, count }) {
         .map((_, i) => (
           <AiOutlineStar key={i + validRate} style={{ color: "#F1F1F1" }} />
         ))}
-      <span style={{ marginLeft: "8px", color: "#1B4B66", fontSize: "14px" }}>
-        {count} Ratings
-      </span>
     </div>
   );
 }

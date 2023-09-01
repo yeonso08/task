@@ -14,6 +14,29 @@
     --color-low-emphasis: #626262;
     --color-grey: #F1F1F1;
     --color-accent: #F4F4F4;
+
+    /* font-style
+    40px
+    34px
+    20px
+    16px
+    14px
+    12px
+
+    font-weigh
+    700
+    600
+    500
+    400
+
+    line-height
+    52px
+    44px
+    26px
+    20px
+    18px
+    16px */
+  
 }
 
 body {
