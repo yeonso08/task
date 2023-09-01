@@ -76,7 +76,7 @@ export default function Header() {
               placeholder="Search for products or brands....."
               className="me-2"
               aria-label="Search"
-              style={{ width: "362px", backgroundColor: "var(--color-grey)" }}
+              style={{ width: "362px", backgroundColor: "var(--color-grey)", border: "none" }}
             />
           </Form>
           <Navbar.Brand style={{ marginLeft: "20px" }}>

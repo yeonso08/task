@@ -15,6 +15,7 @@ const useCart = () => {
     }
     
     localStorage.setItem('basket', JSON.stringify(existingCart));
+    alert("추가 됐습니다.")
   };
 
   return {
