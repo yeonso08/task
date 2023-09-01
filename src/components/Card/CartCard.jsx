@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import useCart from "../../hooks/useCart";
 
 function CartCard({ basketItems }) {
+  const { removeFromCart } = useCart();
+  useEffect(() => {
+
+  }, [removeFromCart])
   return (
     <>
       {basketItems.map((item) => (
-        <Card style={{ border: "none" }}>
+        <Card style={{ border: "none", marginTop: "20px" }}>
           <Row>
             <Col sm={2}>
               <Card.Img src={item.image} />
@@ -42,6 +47,7 @@ function CartCard({ basketItems }) {
               <Card.Text>${item.price * item.quantity}</Card.Text>
             </Col>
           </Row>
+          <button onClick={() => removeFromCart(item.id)}>Delete</button>
         </Card>
       ))}
     </>

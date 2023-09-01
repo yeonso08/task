@@ -1,6 +1,5 @@
 import { React, useState, useEffect } from "react";
 import Layout from "../../components/Layout/Layout";
-import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import CartList from "./CartList";
@@ -15,16 +14,16 @@ function Cart() {
   return (
     <>
       <Layout />
-      <Container>
         <Row>
-          <Col>
+          <Col sm={7}>
             <CartList basketItems={basketItems} />
           </Col>
-          <Col className="d-flex align-items-center">
+          <Col sm={1}>
+          </Col>
+          <Col sm={4} className="d-flex align-items-center">
             <CartCount basketItems={basketItems} />
           </Col>
         </Row>
-      </Container>
     </>
   );
 }

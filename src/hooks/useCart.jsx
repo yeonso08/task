@@ -18,8 +18,16 @@ const useCart = () => {
     alert("추가 됐습니다.")
   };
 
+  const removeFromCart = (itemId) => {
+    const existingCart = JSON.parse(localStorage.getItem('basket') || '[]');
+    const updatedCart = existingCart.filter(item => item.id !== itemId);
+    localStorage.setItem('basket', JSON.stringify(updatedCart));
+    alert("Item was removed.");
+  }
+
   return {
     addToCart,
+    removeFromCart,
   };
 };
 
