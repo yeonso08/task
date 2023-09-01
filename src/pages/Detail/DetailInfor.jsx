@@ -3,8 +3,10 @@ import StarIcon from "../../components/StarIcon";
 import { Row, Stack, Col, Card } from "react-bootstrap";
 import CounterBox from "../../components/CounterBox";
 import CustomButton from "../../components/Button/CustomButton";
+import useCart from "../../hooks/useCart";
 
 function DetailInfor({ productInfor }) {
+  const { addToCart } = useCart();
   return (
     <Stack gap={3}>
       <div>
@@ -91,7 +93,9 @@ function DetailInfor({ productInfor }) {
         </Card.Body>
       </Card>
       <div style={{ display: "flex", marginTop: "20px" }}>
-        <CustomButton>Add To Bag</CustomButton>
+        <CustomButton onClick={() => addToCart(productInfor)}>
+          Add To Bag
+        </CustomButton>
         <CustomButton style={{ marginLeft: "30px" }}>
           Add To Wishlist
         </CustomButton>

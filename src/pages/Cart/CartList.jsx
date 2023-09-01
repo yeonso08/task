@@ -4,6 +4,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Accordion from "react-bootstrap/Accordion";
+import CartCard from "../../components/Card/CartCard";
 
 function CartList() {
   return (
@@ -24,13 +25,8 @@ function CartList() {
             <Col sm={2}>Subtotal</Col>
           </Row>
         </Card.Header>
-
         <Card.Body>
-          <Card.Title>Special title treatment</Card.Title>
-          <Card.Text>
-            With supporting text below as a natural lead-in to additional
-            content.
-          </Card.Text>
+          <CartCard />
         </Card.Body>
       </Card>
       <Accordion defaultActiveKey="0">
