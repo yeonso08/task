@@ -6,7 +6,7 @@ import Card from "react-bootstrap/Card";
 import Accordion from "react-bootstrap/Accordion";
 import CartCard from "../../components/Card/CartCard";
 
-function CartList() {
+function CartList({ basketItems }) {
   return (
     <Stack gap={3}>
       <h1 style={{ color: "var(--color-primary)" }}>My Cart</h1>
@@ -26,7 +26,7 @@ function CartList() {
           </Row>
         </Card.Header>
         <Card.Body>
-          <CartCard />
+          <CartCard basketItems={basketItems} />
         </Card.Body>
       </Card>
       <Accordion defaultActiveKey="0">
