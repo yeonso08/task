@@ -15,11 +15,10 @@ function Cart() {
           <Col>
             <CartList />
           </Col>
+          <Col>
+            <CartCount />
+          </Col>
         </Row>
-        <Col>
-          <CartCount />
-        </Col>
-        <Row></Row>
       </Container>
     </>
   );
