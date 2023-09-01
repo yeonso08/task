@@ -47,7 +47,11 @@ export default function Header() {
           >
             {category.map((item) => (
               <Nav.Link
-                style={{ color: "var(--color-high-emphasis)", fontWeight: 500, lineHeight: "18px"}}
+                style={{
+                  color: "var(--color-high-emphasis)",
+                  fontWeight: 500,
+                  lineHeight: "18px",
+                }}
                 as={Link}
                 to={`/category/${item}`}
               >
@@ -75,6 +79,15 @@ export default function Header() {
               style={{ width: "362px", backgroundColor: "var(--color-grey)" }}
             />
           </Form>
+          <Navbar.Brand style={{ marginLeft: "20px" }}>
+            <img src="/heart.png" alt="profile"></img>
+          </Navbar.Brand>
+          <Navbar.Brand style={{ marginLeft: "10px" }}>
+            <img src="/profile.png" alt="profile"></img>
+          </Navbar.Brand>
+          <Navbar.Brand style={{ marginLeft: "10px" }} as={Link} to="/carts">
+            <img src="/cart.png" alt="cart"></img>
+          </Navbar.Brand>
         </Navbar.Collapse>
       </Container>
     </Navbar>
