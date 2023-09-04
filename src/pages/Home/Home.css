@@ -1,8 +1,8 @@
 /* 큰 화면에서의 스타일 */
 @media (min-width: 1200px) {
     .custom-card-body {
-        width: 600px;
-        height: 250px;
+        width: 700px;
+        height: 280px;
     }
 }
 

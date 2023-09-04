@@ -1,8 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Col, Container, Card, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Home.css";
 import HeartIcon from "../../components/HeartIcon";
+import textVariants from "../../styles/variants/textVariants";
 
 function NewArrivals() {
   const [products, setProducts] = useState([]);
@@ -43,12 +45,18 @@ function NewArrivals() {
 
   return (
     <Container fluid>
-      <Row className="justify-content-between">
+      <Row className="justify-content-between" style={{ margin: "20px" }}>
         <Col md="auto">
-          <div>New Arrivals</div>
+          <div style={{ color: "var(--color-dark)", ...textVariants.H_S_34 }}>
+            New Arrivals
+          </div>
         </Col>
         <Col md="auto">
-          <div>View All 〉</div>
+          <div
+            style={{ color: "var(--color-primary)", ...textVariants.H_S_14 }}
+          >
+            View All 〉
+          </div>
         </Col>
       </Row>
       <Row className="scrollableRow" ref={scrollableRef}>
@@ -61,19 +69,33 @@ function NewArrivals() {
             style={{ marginRight: "40px" }}
           >
             <Card style={{ width: "18rem", height: "500px", border: "none" }}>
-              <Card.Img
-                variant="top"
-                src={item.image}
-                style={{ height: "286px", backgroundColor: "#C4C4C4" }}
-              />
+              <Link to={`/products/${item.id}`}>
+                <Card.Img
+                  variant="top"
+                  src={item.image}
+                  style={{ height: "286px" }}
+                />
+              </Link>
               <Card.Body>
-                <Card.Title style={{ fontSize: "18px" }}>
+                <Card.Title
+                  style={{ ...textVariants.P_M_16, textDecoration: "none" }}
+                  as={Link}
+                  to={`/products/${item.id}`}
+                >
                   {item.title}
                 </Card.Title>
-                <Card.Subtitle> {item.category}</Card.Subtitle>
-                <Card.Text>
+                <Card.Subtitle
+                  style={{
+                    color: "var(--color-low-emphasis)",
+                    marginTop: "8px",
+                    ...textVariants.P_R_14,
+                  }}
+                >
+                  {item.category}
+                </Card.Subtitle>
+                <Card.Text style={{ marginTop: "8px", ...textVariants.P_M_16 }}>
                   ${item.price}
-                  <HeartIcon productId={item.id} />
+                  <HeartIcon productId={item.id} style={{ fontSize: "24px" }} />
                 </Card.Text>
               </Card.Body>
             </Card>

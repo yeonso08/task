@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Container, Form, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import textVariants from "../../styles/variants/textVariants";
 
 export default function Header() {
   const [category, setCategory] = useState([]);
@@ -43,8 +44,7 @@ export default function Header() {
               <Nav.Link
                 style={{
                   color: "var(--color-high-emphasis)",
-                  fontWeight: 500,
-                  lineHeight: "18px",
+                  ...textVariants.H_M_14,
                 }}
                 as={Link}
                 to={`/category/${item}`}

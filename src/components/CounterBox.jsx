@@ -31,14 +31,14 @@ function CounterBox({ onCountChange }) {
       }}
     >
       <button
-        style={{ backgroundColor: "white", border: "none" }}
+        style={{ backgroundColor: "var(--color-bright)", border: "none" }}
         onClick={handleDecrease}
       >
         -
       </button>
       <span style={{ margin: "0 10px" }}>{count}</span>
       <button
-        style={{ backgroundColor: "white", border: "none" }}
+        style={{ backgroundColor: "var(--color-bright)", border: "none" }}
         onClick={handleIncrease}
       >
         +
