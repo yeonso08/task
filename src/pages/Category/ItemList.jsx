@@ -5,10 +5,12 @@ import axios from "axios";
 import HeartIcon from "../../components/HeartIcon";
 import StarIcon from "../../components/StarIcon";
 import textVariants from "../../styles/variants/textVariants";
+import CustomDropdown from "../../components/Dropdown/CustomDropdown";
 
 function ItemList() {
   const { id } = useParams();
   const [products, setProducts] = useState([]);
+  const [selectedItem, setSelectedItem] = useState("Position");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -16,33 +18,59 @@ function ItemList() {
         const response = await axios.get(
           `https://fakestoreapi.com/products/category/${id}`
         );
-        setProducts(response.data);
+        let sortedProducts = [...response.data];
+
+        if (selectedItem === "Price low") {
+          sortedProducts.sort((a, b) => a.price - b.price);
+        } else if (selectedItem === "Price High") {
+          sortedProducts.sort((a, b) => b.price - a.price);
+        } else if (selectedItem === "Count") {
+          sortedProducts.sort((a, b) => b.rating.rate - a.rating.rate);
+        }
+
+        setProducts(sortedProducts);
       } catch (error) {
         console.error("Error fetching the data: ", error);
       }
     };
 
     fetchData();
-  }, [id]);
+  }, [id, selectedItem]);
 
   return (
     <Container fluid>
-      <Row className="justify-content-between" style={{marginLeft: "10px", marginRight: "10px"}}>
+      <Row
+        className="justify-content-between"
+        style={{ marginLeft: "10px", marginRight: "10px" }}
+      >
         <Col md="auto">
-        <img src="/grid.png" alt="grid"></img>
-        <span style={{ marginLeft: "10px", ...textVariants.P_M_16 }}>showing 1 - {products.length} of {products.length} item</span>
+          <img src="/grid.png" alt="grid"></img>
+          <span style={{ marginLeft: "10px", ...textVariants.P_M_16 }}>
+            showing 1 - {products.length} of {products.length} item
+          </span>
         </Col>
-        <Col md="auto">
+        <Col
+          md="auto"
+          style={{ display: "flex", alignItems: "center", marginRight: "60px" }}
+        >
+          Sort By
+          <CustomDropdown
+            items={["Position", "Price low", "Price High", "Count"]}
+            initialItem={selectedItem}
+            onChange={setSelectedItem}
+            style={{ width: "150px", height: "50px", marginLeft: "10px" }}
+            toggleContent={(selected) => <>{selected}</>}
+          />
         </Col>
       </Row>
-      <Row style={{marginTop: "30px", marginLeft: "60px"}}>
+      <Row style={{ marginTop: "30px", marginLeft: "60px" }}>
         {products.map((item) => (
           <Col
             key={item.id}
             md={4}
             lg={3}
             xl={2}
-            style={{ marginRight: "60px", }}
+            style={{ marginRight: "60px" }}
           >
             <Card style={{ width: "18rem", height: "500px", border: "none" }}>
               <Link to={`/products/${item.id}`}>
