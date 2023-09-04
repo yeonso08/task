@@ -1,13 +1,14 @@
 import React from "react";
 import { Card, Row, Col } from "react-bootstrap";
 import useCart from "../../hooks/useCart";
+import CustomButton from "../Button/CustomButton";
 
 function CartCard({ basketItems, setReload }) {
   const { removeFromCart } = useCart();
 
   const handleRemove = (itemId) => {
     removeFromCart(itemId);
-    setReload((prev) => !prev); // toggling the reload state
+    setReload((prev) => !prev);
   };
 
   return (
@@ -48,7 +49,18 @@ function CartCard({ basketItems, setReload }) {
               <Card.Text>${item.price * item.quantity}</Card.Text>
             </Col>
           </Row>
-          <button onClick={() => handleRemove(item.id)}>Delete</button>
+          <div style={{ display: "flex", gap: "50px", marginLeft: "500px" }}>
+            <CustomButton variant="underline" style={{ width: "130px" }}>
+              Move To Wishlist
+            </CustomButton>
+            <CustomButton
+              variant="underline"
+              style={{ color: "var(--color-error)", width: "70px" }}
+              onClick={() => handleRemove(item.id)}
+            >
+              Remove
+            </CustomButton>
+          </div>
         </Card>
       ))}
     </>
