@@ -1,9 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
-import Row from "react-bootstrap/Row";
+import { Col, Container, Card, Row } from "react-bootstrap";
 import axios from "axios";
 import "./Home.css";
 import HeartIcon from "../../components/HeartIcon";

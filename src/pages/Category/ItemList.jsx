@@ -41,11 +41,15 @@ function ItemList() {
     <Container fluid>
       <Row
         className="justify-content-between"
-        style={{ marginLeft: "10px", marginRight: "10px" }}
+        style={{
+          marginLeft: "10px",
+          marginRight: "10px",
+          ...textVariants.P_M_16,
+        }}
       >
         <Col md="auto">
           <img src="/grid.png" alt="grid"></img>
-          <span style={{ marginLeft: "10px", ...textVariants.P_M_16 }}>
+          <span style={{ marginLeft: "10px" }}>
             showing 1 - {products.length} of {products.length} item
           </span>
         </Col>

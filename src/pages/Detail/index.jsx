@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import { Container, Row, Col } from "react-bootstrap";
 import Layout from "../../components/Layout/Layout";
 import axios from "axios";
 import { useParams } from "react-router-dom";

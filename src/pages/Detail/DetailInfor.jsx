@@ -29,12 +29,14 @@ function DetailInfor({ productInfor }) {
         </div>
       </div>
       <div style={{ display: "flex", alignItems: "center" }}>
-  <StarIcon rate={productInfor?.rating?.rate} />
-  <span style={{ marginLeft: "8px", color: "#1B4B66", fontSize: "14px" }}>
-    ({productInfor?.rating?.count}) Ratings
-  </span>
-</div>
-      <div style={{color: "var(--color-high-emphasis)", fontSize: "52px"}}>${productInfor.price}</div>
+        <StarIcon rate={productInfor?.rating?.rate} />
+        <span style={{ marginLeft: "8px", color: "#1B4B66", fontSize: "14px" }}>
+          ({productInfor?.rating?.count}) Ratings
+        </span>
+      </div>
+      <div style={{ color: "var(--color-high-emphasis)", fontSize: "52px" }}>
+        ${productInfor.price}
+      </div>
       <hr />
       <Row>
         <Col>

@@ -1,6 +1,5 @@
 import React from "react";
-import { Col, Row } from "react-bootstrap";
-import Card from "react-bootstrap/Card";
+import { Col, Row, Card } from "react-bootstrap";
 import CustomButton from "../../components/Button/CustomButton";
 
 function CartCount({ basketItems }) {
@@ -35,7 +34,7 @@ function CartCount({ basketItems }) {
             <Card.Text>Delivery Free</Card.Text>
           </Col>
           <Col>
-          <Card.Text>$-0.00</Card.Text>
+            <Card.Text>$-0.00</Card.Text>
           </Col>
         </Row>
         <Row>
@@ -48,13 +47,13 @@ function CartCount({ basketItems }) {
         </Row>
       </Card.Body>
       <Row>
-          <Col>
+        <Col>
           <CustomButton>Place Order</CustomButton>
-          </Col>
-          <Col>
+        </Col>
+        <Col>
           <CustomButton>Continue Shopping</CustomButton>
-          </Col>
-        </Row>
+        </Col>
+      </Row>
     </Card>
   );
 }

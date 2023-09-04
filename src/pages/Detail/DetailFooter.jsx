@@ -1,8 +1,5 @@
 import React from "react";
-import Container from "react-bootstrap/Container";
-import Card from "react-bootstrap/Card";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import { Container, Card, Row, Col } from "react-bootstrap";
 import CustomButton from "../../components/Button/CustomButton";
 
 function DetailFooter({ productDescrip }) {

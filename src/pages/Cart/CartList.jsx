@@ -1,9 +1,5 @@
 import React from "react";
-import Stack from "react-bootstrap/Stack";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Card from "react-bootstrap/Card";
-import Accordion from "react-bootstrap/Accordion";
+import { Stack, Row, Col, Card, Accordion } from "react-bootstrap";
 import CartCard from "../../components/Card/CartCard";
 
 function CartList({ basketItems }) {

@@ -1,14 +1,10 @@
 import React, { useEffect } from "react";
-import Card from "react-bootstrap/Card";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import { Card, Row, Col } from "react-bootstrap";
 import useCart from "../../hooks/useCart";
 
 function CartCard({ basketItems }) {
   const { removeFromCart } = useCart();
-  useEffect(() => {
-
-  }, [removeFromCart])
+  useEffect(() => {}, [removeFromCart]);
   return (
     <>
       {basketItems.map((item) => (

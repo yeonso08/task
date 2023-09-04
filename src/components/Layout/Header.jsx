@@ -1,12 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Button from "react-bootstrap/Button";
-import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
-
+import { Container, Form, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export default function Header() {
@@ -58,17 +52,6 @@ export default function Header() {
                 {item}
               </Nav.Link>
             ))}
-            {/* 장바구니 만들 때 사용
-            <NavDropdown title="Link" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                Something else here
-              </NavDropdown.Item>
-            </NavDropdown> */}
           </Nav>
           <Form className="d-flex" onSubmit={handleSearch}>
             <Form.Control
@@ -76,7 +59,11 @@ export default function Header() {
               placeholder="Search for products or brands....."
               className="me-2"
               aria-label="Search"
-              style={{ width: "362px", backgroundColor: "var(--color-grey)", border: "none" }}
+              style={{
+                width: "362px",
+                backgroundColor: "var(--color-grey)",
+                border: "none",
+              }}
             />
           </Form>
           <Navbar.Brand style={{ marginLeft: "20px" }}>
