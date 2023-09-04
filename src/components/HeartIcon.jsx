@@ -3,7 +3,7 @@ import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { useRecoilState } from 'recoil';
 import { likedProductsState } from '../atom/heartAtom';
 
-function HeartIcon({ productId }) {
+function HeartIcon({ productId, style }) {
     const [likedProducts, setLikedProducts] = useRecoilState(likedProductsState);
     
     const isLiked = likedProducts[productId] || false;
@@ -16,9 +16,9 @@ function HeartIcon({ productId }) {
     };
 
     return isLiked ? (
-        <AiFillHeart style={{ float: "right", color: "red" }} onClick={toggleLike} />
+        <AiFillHeart style={{ float: "right", color: "red", ...style }} onClick={toggleLike} />
     ) : (
-        <AiOutlineHeart style={{ float: "right" }} onClick={toggleLike} />
+        <AiOutlineHeart style={{ float: "right", ...style }} onClick={toggleLike} />
     );
 }
 
