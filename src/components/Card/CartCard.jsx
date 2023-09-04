@@ -1,14 +1,19 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Card, Row, Col } from "react-bootstrap";
 import useCart from "../../hooks/useCart";
 
-function CartCard({ basketItems }) {
+function CartCard({ basketItems, setReload }) {
   const { removeFromCart } = useCart();
-  useEffect(() => {}, [removeFromCart]);
+
+  const handleRemove = (itemId) => {
+    removeFromCart(itemId);
+    setReload((prev) => !prev); // toggling the reload state
+  };
+
   return (
     <>
       {basketItems.map((item) => (
-        <Card style={{ border: "none", marginTop: "20px" }}>
+        <Card style={{ border: "none", marginTop: "20px" }} key={item.id}>
           <Row>
             <Col sm={2}>
               <Card.Img src={item.image} />
@@ -43,7 +48,7 @@ function CartCard({ basketItems }) {
               <Card.Text>${item.price * item.quantity}</Card.Text>
             </Col>
           </Row>
-          <button onClick={() => removeFromCart(item.id)}>Delete</button>
+          <button onClick={() => handleRemove(item.id)}>Delete</button>
         </Card>
       ))}
     </>

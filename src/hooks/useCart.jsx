@@ -17,7 +17,7 @@ const useCart = () => {
     }
 
     localStorage.setItem("basket", JSON.stringify(existingCart));
-    alert("추가 됐습니다.");
+    alert("추가됐습니다.");
   };
 
   const removeFromCart = (itemId) => {
@@ -25,7 +25,7 @@ const useCart = () => {
     const updatedCart = existingCart.filter((item) => item.id !== itemId);
     localStorage.setItem("basket", JSON.stringify(updatedCart));
     alert("Item was removed.");
-  };
+  };  
 
   return {
     addToCart,

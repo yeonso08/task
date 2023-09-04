@@ -2,7 +2,7 @@ import React from "react";
 import { Stack, Row, Col, Card, Accordion } from "react-bootstrap";
 import CartCard from "../../components/Card/CartCard";
 
-function CartList({ basketItems }) {
+function CartList({ basketItems, setReload }) {
   return (
     <Stack gap={3}>
       <h1 style={{ color: "var(--color-primary)" }}>My Cart</h1>
@@ -22,7 +22,7 @@ function CartList({ basketItems }) {
           </Row>
         </Card.Header>
         <Card.Body>
-          <CartCard basketItems={basketItems} />
+          <CartCard basketItems={basketItems} setReload={setReload} />
         </Card.Body>
       </Card>
       <Accordion defaultActiveKey="0">
