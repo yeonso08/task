@@ -12,3 +12,13 @@
     background-color: var(--color-primary);
     color: var(--color-bright);
 }
+
+.underLineButton {
+    background-color: var(--color-bright);
+    color: var(--color-primary);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    line-height: 24px;
+    text-decoration-line: underline;
+    border: none;
+}
