@@ -29,7 +29,7 @@ function Detail() {
   return (
     <>
       <Layout />
-      <Container>
+      <Container style={{marginTop: "30px" }}>
         <Row>
           <Col>
             <DetailCard productImg={product.image} />

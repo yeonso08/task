@@ -4,6 +4,8 @@ import { Row, Stack, Col, Card } from "react-bootstrap";
 import CounterBox from "../../components/CounterBox";
 import CustomButton from "../../components/Button/CustomButton";
 import useCart from "../../hooks/useCart";
+import textVariants from "../../styles/variants/textVariants";
+import CouponCard from "../../components/Card/CouponCard";
 
 function DetailInfor({ productInfor }) {
   const { addToCart } = useCart();
@@ -23,25 +25,46 @@ function DetailInfor({ productInfor }) {
   return (
     <Stack gap={3}>
       <div>
-        <h1>{productInfor.title}</h1>
-        <div>
-          <h4>{productInfor.category}</h4>
+        <div style={{ color: "var(--color-dark)", ...textVariants.H_S_34 }}>
+          {productInfor.title}
+        </div>
+        <div
+          style={{ color: "var(--color-low-emphasis)", ...textVariants.H_S_20 }}
+        >
+          {productInfor.category}
         </div>
       </div>
       <div style={{ display: "flex", alignItems: "center" }}>
-        <StarIcon rate={productInfor?.rating?.rate} />
-        <span style={{ marginLeft: "8px", color: "#1B4B66", fontSize: "14px" }}>
+        <StarIcon
+          style={{ width: "152px", height: "24px" }}
+          rate={productInfor?.rating?.rate}
+        />
+        <span
+          style={{
+            marginLeft: "8px",
+            color: "var(--color-light-text)",
+            ...textVariants.P_R_16,
+          }}
+        >
           ({productInfor?.rating?.count}) Ratings
         </span>
       </div>
-      <div style={{ color: "var(--color-high-emphasis)", fontSize: "52px" }}>
+      <div
+        style={{ color: "var(--color-high-emphasis)", ...textVariants.H_B_52 }}
+      >
         ${productInfor.price}
       </div>
       <hr />
       <Row>
         <Col>
-          <h5>Delivery Details</h5>
-          <div>
+          <div style={textVariants.H_S_20}>Delivery Details</div>
+          <div
+            style={{
+              color: "var(--color-low-emphasis)",
+              marginTop: "10px",
+              ...textVariants.P_M_16,
+            }}
+          >
             Check estimated delivery <br />
             date/pickup option.
           </div>
@@ -56,61 +79,58 @@ function DetailInfor({ productInfor }) {
             }}
           >
             <Col style={{ display: "flex", justifyContent: "space-between" }}>
-              <div style={{ color: "var(--color-low-emphasis)" }}>
+              <div
+                style={{
+                  color: "var(--color-low-emphasis)",
+                  ...textVariants.P_M_16,
+                }}
+              >
                 Apply Valid Pincode
               </div>
-              <div style={{ color: "var(--color-primary)" }}>Check</div>
+              <div
+                style={{
+                  color: "var(--color-primary)",
+                  ...textVariants.H_S_14,
+                }}
+              >
+                CHECK
+              </div>
             </Col>
           </Card>
         </Col>
       </Row>
-      <div style={{ display: "flex" }}>
-        Quantity:
+      <div style={{ display: "flex", marginTop: "20px" }}>
+        <div style={{ color: "var(--color-dark)", ...textVariants.H_S_20 }}>
+          Quantity:
+        </div>
         <span style={{ marginLeft: "20px" }}>
           <CounterBox onCountChange={handleCountChange} />
         </span>
       </div>
-      {/* 쿠폰 카드 */}
-      <Card
-        style={{
-          height: "100px",
-          width: "400px",
-          borderColor: "var(--color-primary)",
-        }}
-      >
-        <Card.Body className="d-flex align-items-center justify-content-between">
-          <div>
-            <Card.Subtitle>
-              Get up to 30% Off on order <br /> value above $100
-            </Card.Subtitle>
-            <Card.Text style={{ color: "var(--color-primary)" }}>
-              Terms & Conditions
-            </Card.Text>
-          </div>
-          <div style={{ display: "flex", alignItems: "center" }}>
-            <Card
-              style={{
-                backgroundColor: "var(--color-grey)",
-                border: "none",
-                height: "70px",
-                width: "120px",
-                margin: "0",
-              }}
-            >
-              <Card.Body className="d-flex flex-column align-items-center justify-content-center p-0">
-                <Card.Text style={{ color: "var(--color-low-emphasis)" }}>
-                  Use Code
-                </Card.Text>
-                <Card.Subtitle>ORDER100</Card.Subtitle>
-              </Card.Body>
-            </Card>
-          </div>
-        </Card.Body>
-      </Card>
+      <CouponCard
+        title="Get up to 30% Off on order value above $100"
+        code="ORDER100"
+      />
       <div style={{ display: "flex", marginTop: "20px" }}>
-        <CustomButton onClick={handleAddToCart}>Add To Bag</CustomButton>
+        <CustomButton onClick={handleAddToCart}>
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <img
+              style={{ marginRight: "10px" }}
+              src="/cart.png"
+              alt="cart"
+            ></img>
+            Add To Bag
+          </div>
+        </CustomButton>
         <CustomButton style={{ marginLeft: "30px" }}>
-          Add To Wishlist
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <img
+              style={{ marginRight: "10px" }}
+              src="/heart.png"
+              alt="heart"
+            ></img>
+            Add To Wishlist
+          </div>
         </CustomButton>
       </div>
     </Stack>

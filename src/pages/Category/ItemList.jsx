@@ -47,7 +47,10 @@ function ItemList() {
           ...textVariants.P_M_16,
         }}
       >
-        <Col md="auto">
+        <Col
+          md="auto"
+          style={{ display: "flex", alignItems: "center", marginLeft: "60px" }}
+        >
           <img src="/grid.png" alt="grid"></img>
           <span style={{ marginLeft: "10px" }}>
             showing 1 - {products.length} of {products.length} item
