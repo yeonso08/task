@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Card, Row, Col } from "react-bootstrap";
 import CustomButton from "../../components/Button/CustomButton";
+import textVariants from "../../styles/variants/textVariants";
 
 function DetailFooter({ productDescrip }) {
   return (
@@ -50,7 +51,14 @@ function DetailFooter({ productDescrip }) {
       </Card>
       <Card style={{ border: "none", marginTop: "10px" }}>
         <Card.Body>
-          <Card.Text>{productDescrip}</Card.Text>
+          <Card.Text
+            style={{
+              color: "var(--color-low-emphasis)",
+              ...textVariants.P_M_16,
+            }}
+          >
+            {productDescrip}
+          </Card.Text>
         </Card.Body>
       </Card>
     </Container>
