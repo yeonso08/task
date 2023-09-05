@@ -1,7 +1,7 @@
 import React from "react";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { useRecoilState } from "recoil";
-import { likedProductsState } from "../atom/heartAtom";
+import { likedProductsState } from "../../atom/heartAtom";
 
 function HeartIcon({ productId, style }) {
   const [likedProducts, setLikedProducts] = useRecoilState(likedProductsState);

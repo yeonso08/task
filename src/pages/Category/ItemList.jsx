@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Card, Row, Col, Container } from "react-bootstrap";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
-import HeartIcon from "../../components/HeartIcon";
-import StarIcon from "../../components/StarIcon";
+import HeartIcon from "../../components/Icon/HeartIcon";
+import StarIcon from "../../components/Icon/StarIcon";
 import textVariants from "../../styles/variants/textVariants";
 import CustomDropdown from "../../components/Dropdown/CustomDropdown";
 

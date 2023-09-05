@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import StarIcon from "../../components/StarIcon";
+import StarIcon from "../../components/Icon/StarIcon";
 import { Row, Stack, Col } from "react-bootstrap";
 import CounterBox from "../../components/CounterBox";
 import CustomButton from "../../components/Button/CustomButton";

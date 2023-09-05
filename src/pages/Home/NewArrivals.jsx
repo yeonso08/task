@@ -3,7 +3,7 @@ import { Col, Container, Card, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Home.css";
-import HeartIcon from "../../components/HeartIcon";
+import HeartIcon from "../../components/Icon/HeartIcon";
 import textVariants from "../../styles/variants/textVariants";
 
 function NewArrivals() {
