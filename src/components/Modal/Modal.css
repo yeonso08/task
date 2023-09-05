@@ -1,0 +1,7 @@
+.custom-modal-position .modal-dialog {
+    position: fixed;
+    top: 10%;
+    left: 10%;
+    transform: translate(0, 0);
+  }
+  

@@ -3,6 +3,7 @@ import axios from "axios";
 import { Container, Form, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import textVariants from "../../styles/variants/textVariants";
+import WishModal from "../Modal/WishModal";
 
 export default function Header() {
   const [category, setCategory] = useState([]);
@@ -67,7 +68,7 @@ export default function Header() {
             />
           </Form>
           <Navbar.Brand style={{ marginLeft: "20px" }}>
-            <img src="/heart.png" alt="profile"></img>
+            <WishModal />
           </Navbar.Brand>
           <Navbar.Brand style={{ marginLeft: "10px" }}>
             <img src="/profile.png" alt="profile"></img>
