@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import StarIcon from "../../components/StarIcon";
-import { Row, Stack, Col, Card } from "react-bootstrap";
+import { Row, Stack, Col } from "react-bootstrap";
 import CounterBox from "../../components/CounterBox";
 import CustomButton from "../../components/Button/CustomButton";
 import useCart from "../../hooks/useCart";
 import textVariants from "../../styles/variants/textVariants";
 import CouponCard from "../../components/Card/CouponCard";
+import ApplyCard from "../../components/Card/ApplyCard";
 
 function DetailInfor({ productInfor }) {
   const { addToCart } = useCart();
@@ -15,11 +16,7 @@ function DetailInfor({ productInfor }) {
   };
 
   const handleAddToCart = () => {
-    const productWithQuantity = {
-      ...productInfor,
-      quantity: quantity,
-    };
-    addToCart(productWithQuantity);
+    addToCart({ ...productInfor, quantity });
   };
 
   return (
@@ -70,33 +67,7 @@ function DetailInfor({ productInfor }) {
           </div>
         </Col>
         <Col>
-          <Card
-            body
-            style={{
-              backgroundColor: "var(--color-grey)",
-              border: "none",
-              width: "380px",
-            }}
-          >
-            <Col style={{ display: "flex", justifyContent: "space-between" }}>
-              <div
-                style={{
-                  color: "var(--color-low-emphasis)",
-                  ...textVariants.P_M_16,
-                }}
-              >
-                Apply Valid Pincode
-              </div>
-              <div
-                style={{
-                  color: "var(--color-primary)",
-                  ...textVariants.H_S_14,
-                }}
-              >
-                CHECK
-              </div>
-            </Col>
-          </Card>
+          <ApplyCard />
         </Col>
       </Row>
       <div style={{ display: "flex", marginTop: "20px" }}>
