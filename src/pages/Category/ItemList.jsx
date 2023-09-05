@@ -125,7 +125,7 @@ function ItemList() {
                 <Card.Text style={{ marginTop: "5px", ...textVariants.P_M_16 }}>
                   ${item.price}
                   <HeartIcon
-                    productId={item.id}
+                    product={item}
                     style={{ width: "24px", height: "24px" }}
                   />
                 </Card.Text>
