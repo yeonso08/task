@@ -59,6 +59,16 @@ const textVariants = {
     fontWeight: "var(--font-weight-medium)",
     lineHeight: "var(--line-height-xs)",
   },
+  S_M_16: {
+    fontSize: "var(--font-size-sm)",
+    fontWeight: "var(--font-weight-semibold)",
+    lineHeight: "var(--line-height-sm)",
+  },
+  M_X_16: {
+    fontSize: "var(--font-size-sm)",
+    fontWeight: "var(--font-weight-medium)",
+    lineHeight: "var(--line-height-xs)",
+  },
 };
 
 export default textVariants;

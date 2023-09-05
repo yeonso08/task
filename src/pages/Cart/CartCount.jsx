@@ -1,6 +1,7 @@
 import React from "react";
 import { Col, Row, Card } from "react-bootstrap";
 import CustomButton from "../../components/Button/CustomButton";
+import textVariants from "../../styles/variants/textVariants";
 
 function CartCount({ basketItems }) {
   const total = basketItems.reduce(
@@ -9,49 +10,98 @@ function CartCount({ basketItems }) {
   );
   return (
     <Card style={{ border: "none" }}>
-      <Card.Header as="h5" style={{ backgroundColor: "var(--color-bright)" }}>
+      <Card.Header
+        style={{
+          backgroundColor: "var(--color-bright)",
+          color: "var(--color-dark)",
+          ...textVariants.H_S_20,
+        }}
+      >
         Order Summary
       </Card.Header>
       <Card.Body>
         <Row>
           <Col>
-            <Card.Text>Sub Total</Card.Text>
+            <div
+              style={{
+                color: "var(--color-low-emphasis)",
+                ...textVariants.P_M_16,
+              }}
+            >
+              Sub Total
+            </div>
           </Col>
           <Col>
-            <Card.Text>${total}</Card.Text>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <Card.Text>Discount</Card.Text>
-          </Col>
-          <Col>
-            <Card.Text>$-0.00</Card.Text>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <Card.Text>Delivery Free</Card.Text>
-          </Col>
-          <Col>
-            <Card.Text>$-0.00</Card.Text>
+            <div
+              style={{
+                ...textVariants.M_X_16,
+              }}
+            >
+              ${total}
+            </div>
           </Col>
         </Row>
         <Row>
           <Col>
-            <Card.Text>Grand Total</Card.Text>
+            <div
+              style={{
+                color: "var(--color-low-emphasis)",
+                ...textVariants.P_M_16,
+              }}
+            >
+              Discount
+            </div>
           </Col>
           <Col>
-            <Card.Text>${total}</Card.Text>
+            <div
+              style={{
+                ...textVariants.M_X_16,
+              }}
+            >
+              $-0.00
+            </div>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <div
+              style={{
+                color: "var(--color-low-emphasis)",
+                ...textVariants.P_M_16,
+              }}
+            >
+              Delivery Free
+            </div>
+          </Col>
+          <Col>
+            <div
+              style={{
+                ...textVariants.M_X_16,
+              }}
+            >
+              $-0.00
+            </div>
+          </Col>
+        </Row>
+        <Row style={textVariants.S_M_16}>
+          <Col>
+            <div>Grand Total</div>
+          </Col>
+          <Col>
+            <div>${total}</div>
           </Col>
         </Row>
       </Card.Body>
       <Row>
         <Col>
-          <CustomButton>Place Order</CustomButton>
+          <CustomButton style={{ width: "180px", marginTop: "20px" }}>
+            Place Order
+          </CustomButton>
         </Col>
         <Col>
-          <CustomButton>Continue Shopping</CustomButton>
+          <CustomButton style={{ width: "180px", marginTop: "20px" }}>
+            Continue Shopping
+          </CustomButton>
         </Col>
       </Row>
     </Card>
