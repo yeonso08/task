@@ -1,11 +1,13 @@
 import React from "react";
-import { Stack, Row, Col, Card, Accordion } from "react-bootstrap";
+import { Container ,Stack, Row, Col, Card, Accordion } from "react-bootstrap";
 import CartCard from "../../components/Card/CartCard";
+import textVariants from "../../styles/variants/textVariants";
 
 function CartList({ basketItems, setReload }) {
   return (
+    <Container>
     <Stack gap={3}>
-      <h1 style={{ color: "var(--color-primary)" }}>My Cart</h1>
+      <div style={{ color: "var(--color-primary)", ...textVariants.H_S_34 }}>My Cart</div>
       <Card style={{ border: "none" }}>
         <Card.Header
           style={{
@@ -14,7 +16,7 @@ function CartList({ basketItems, setReload }) {
             color: "var(--color-low-emphasis)",
           }}
         >
-          <Row>
+          <Row style={{color: "var(--color-low-emphasis)", ...textVariants.P_M_16}}>
             <Col sm={6}>Product Name</Col>
             <Col sm={2}>Price</Col>
             <Col sm={2}>Qty</Col>
@@ -40,6 +42,7 @@ function CartList({ basketItems, setReload }) {
         </Accordion.Item>
       </Accordion>
     </Stack>
+    </Container>
   );
 }
 
