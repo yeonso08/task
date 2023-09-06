@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { Overlay, Popover, Card, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { useRecoilValue } from "recoil";
+import { useRecoilValue, useRecoilState } from "recoil";
 import { likedProductsState } from "../../atom/heartAtom";
 import textVariants from "../../styles/variants/textVariants";
 
@@ -9,6 +9,12 @@ function WishModal() {
   const [show, setShow] = useState(false);
   const target = useRef(null);
   const wishInfor = useRecoilValue(likedProductsState);
+  const [likedProducts, setLikedProducts] = useRecoilState(likedProductsState);
+
+  const setDelete = (id) => {
+    const updatedProducts = likedProducts.filter((p) => p.id !== id);
+    setLikedProducts(updatedProducts);
+  };
 
   return (
     <>
@@ -35,54 +41,52 @@ function WishModal() {
                   style={{
                     border: "none",
                     height: "110px",
-                    position: "relative", // Card에 상대적 위치 설정
+                    position: "relative",
                   }}
                   key={item.id}
                 >
-                  <Link
-                    to={`/products/${item.id}`}
-                    style={{ textDecoration: "none" }}
-                  >
-                    <Row>
-                      <Col xs={4}>
+                  <Row>
+                    <Col xs={4}>
+                      <Link to={`/products/${item.id}`}>
                         <Card.Img
                           style={{ width: "65px", height: "70px" }}
                           src={item.image}
                         />
-                      </Col>
-                      <Col xs={7}>
-                        <Card.Title
-                          style={{
-                            color: "var(--color-high-emphasis)",
-                            ...textVariants.P_M_12,
-                          }}
-                        >
-                          {item.title}
-                        </Card.Title>
-                      </Col>
-                      <Col xs={1}>
-                        <button
-                          style={{
-                            position: "absolute",
-                            top: "-5px",
-                            right: "-5px",
-                            background: "transparent",
-                            border: "none",
-                            cursor: "pointer",
-                          }}
-                          onClick={() => {
-                            // 원하는 동작을 여기에 넣습니다, 예를 들면 아이템을 위시리스트에서 제거하는 것
-                          }}
-                        >
-                          <img
-                            src="/cross.png"
-                            alt="delete"
-                            style={{ width: "15px", height: "15px" }}
-                          ></img>
-                        </button>
-                      </Col>
-                    </Row>
-                  </Link>
+                      </Link>
+                    </Col>
+                    <Col xs={7}>
+                      <Card.Title
+                        style={{
+                          color: "var(--color-high-emphasis)",
+                          textDecoration: "none",
+                          ...textVariants.P_M_12,
+                        }}
+                        as={Link}
+                        to={`/products/${item.id}`}
+                      >
+                        {item.title}
+                      </Card.Title>
+                    </Col>
+                    <Col xs={1}>
+                      <button
+                        style={{
+                          position: "absolute",
+                          top: "-5px",
+                          right: "-5px",
+                          background: "transparent",
+                          border: "none",
+                          cursor: "pointer",
+                        }}
+                        onClick={() => setDelete(item.id)}
+                      >
+                        <img
+                          src="/cross.png"
+                          alt="delete"
+                          style={{ width: "15px", height: "15px" }}
+                        ></img>
+                      </button>
+                    </Col>
+                  </Row>
                   <hr />
                 </Card>
               ))}
