@@ -24,7 +24,7 @@ const useCart = () => {
     const existingCart = JSON.parse(localStorage.getItem("basket") || "[]");
     const updatedCart = existingCart.filter((item) => item.id !== itemId);
     localStorage.setItem("basket", JSON.stringify(updatedCart));
-    alert("Item was removed.");
+    alert("삭제됐습니다.");
   };  
 
   return {

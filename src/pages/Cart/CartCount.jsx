@@ -41,7 +41,7 @@ function CartCount({ basketItems }) {
             </div>
           </Col>
         </Row>
-        <Row>
+        <Row style={{ marginTop: "10px" }}>
           <Col>
             <div
               style={{
@@ -62,7 +62,7 @@ function CartCount({ basketItems }) {
             </div>
           </Col>
         </Row>
-        <Row>
+        <Row style={{ marginTop: "10px" }}>
           <Col>
             <div
               style={{
@@ -83,7 +83,7 @@ function CartCount({ basketItems }) {
             </div>
           </Col>
         </Row>
-        <Row style={textVariants.S_M_16}>
+        <Row style={{ marginTop: "10px", ...textVariants.S_M_16 }}>
           <Col>
             <div>Grand Total</div>
           </Col>
