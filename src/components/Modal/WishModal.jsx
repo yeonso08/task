@@ -1,7 +1,9 @@
 import { useState, useRef } from "react";
 import { Overlay, Popover, Card, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import { likedProductsState } from "../../atom/heartAtom";
+import textVariants from "../../styles/variants/textVariants";
 
 function WishModal() {
   const [show, setShow] = useState(false);
@@ -38,14 +40,29 @@ function WishModal() {
                   }}
                   key={item.id}
                 >
-                  <Row>
-                    <Col lg={1} xs={2}>
-                      <Card.Img
-                        style={{ width: "75px", height: "80px" }}
-                        src={item.image}
-                      />
-                    </Col>
-                  </Row>
+                  <Link
+                    to={`/products/${item.id}`}
+                    style={{ textDecoration: "none" }}
+                  >
+                    <Row>
+                      <Col xs={4}>
+                        <Card.Img
+                          style={{ width: "75px", height: "80px" }}
+                          src={item.image}
+                        />
+                      </Col>
+                      <Col xs={8}>
+                        <Card.Title
+                          style={{
+                            color: "var(--color-high-emphasis)",
+                            ...textVariants.P_M_12,
+                          }}
+                        >
+                          {item.title}
+                        </Card.Title>
+                      </Col>
+                    </Row>
+                  </Link>
                 </Card>
               ))}
             </Popover.Body>
