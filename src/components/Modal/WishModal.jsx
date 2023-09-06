@@ -34,9 +34,8 @@ function WishModal() {
                 <Card
                   style={{
                     border: "none",
-                    marginTop: "20px",
-                    marginBottom: "60px",
                     height: "110px",
+                    position: "relative", // Card에 상대적 위치 설정
                   }}
                   key={item.id}
                 >
@@ -47,11 +46,11 @@ function WishModal() {
                     <Row>
                       <Col xs={4}>
                         <Card.Img
-                          style={{ width: "75px", height: "80px" }}
+                          style={{ width: "65px", height: "70px" }}
                           src={item.image}
                         />
                       </Col>
-                      <Col xs={8}>
+                      <Col xs={7}>
                         <Card.Title
                           style={{
                             color: "var(--color-high-emphasis)",
@@ -61,8 +60,30 @@ function WishModal() {
                           {item.title}
                         </Card.Title>
                       </Col>
+                      <Col xs={1}>
+                        <button
+                          style={{
+                            position: "absolute",
+                            top: "-5px",
+                            right: "-5px",
+                            background: "transparent",
+                            border: "none",
+                            cursor: "pointer",
+                          }}
+                          onClick={() => {
+                            // 원하는 동작을 여기에 넣습니다, 예를 들면 아이템을 위시리스트에서 제거하는 것
+                          }}
+                        >
+                          <img
+                            src="/cross.png"
+                            alt="delete"
+                            style={{ width: "15px", height: "15px" }}
+                          ></img>
+                        </button>
+                      </Col>
                     </Row>
                   </Link>
+                  <hr />
                 </Card>
               ))}
             </Popover.Body>
