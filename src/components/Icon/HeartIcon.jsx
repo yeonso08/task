@@ -6,13 +6,17 @@ import { likedProductsState } from "../../atom/heartAtom";
 function HeartIcon({ product, style }) {
   const [likedProducts, setLikedProducts] = useRecoilState(likedProductsState);
 
-  const isLiked = likedProducts.some(likedProduct => likedProduct.id === product.id);
+  // 현재 상품이 좋아요 상태인지 확인
+  const isLiked = likedProducts.some((p) => p.id === product.id);
 
   const toggleLike = () => {
     if (isLiked) {
-      setLikedProducts(prevState => prevState.filter(likedProduct => likedProduct.id !== product.id));
+      // 이미 좋아요 상태인 경우 제거
+      const updatedProducts = likedProducts.filter((p) => p.id !== product.id);
+      setLikedProducts(updatedProducts);
     } else {
-      setLikedProducts(prevState => [...prevState, product]);
+      // 좋아요 상태가 아닌 경우 추가
+      setLikedProducts([...likedProducts, product]);
     }
   };
 

@@ -95,7 +95,7 @@ function NewArrivals() {
                 </Card.Subtitle>
                 <Card.Text style={{ marginTop: "8px", ...textVariants.P_M_16 }}>
                   ${item.price}
-                  <HeartIcon productId={item.id} style={{ fontSize: "24px" }} />
+                  <HeartIcon product={item} style={{ fontSize: "24px" }} />
                 </Card.Text>
               </Card.Body>
             </Card>

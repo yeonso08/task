@@ -28,7 +28,7 @@ function WishModal() {
         {(props) => (
           <Popover id="popover-contained" {...props}>
             <Popover.Body>
-              {Object.keys(wishInfor).map((id) => (
+              {wishInfor.map((item) => (
                 <Card
                   style={{
                     border: "none",
@@ -36,13 +36,13 @@ function WishModal() {
                     marginBottom: "60px",
                     height: "110px",
                   }}
-                  key={id}
+                  key={item.id}
                 >
                   <Row>
                     <Col lg={1} xs={2}>
                       <Card.Img
                         style={{ width: "75px", height: "80px" }}
-                        src={id}
+                        src={item.image}
                       />
                     </Col>
                   </Row>
