@@ -7,16 +7,22 @@ import useCart from "../../hooks/useCart";
 import textVariants from "../../styles/variants/textVariants";
 import CouponCard from "../../components/Card/CouponCard";
 import ApplyCard from "../../components/Card/ApplyCard";
+import useWish from "../../hooks/useWish";
 
 function DetailInfor({ productInfor }) {
   const { addToCart } = useCart();
   const [quantity, setQuantity] = useState(1);
+  const { toggleLike } = useWish(productInfor);
   const handleCountChange = (count) => {
     setQuantity(count);
   };
 
   const handleAddToCart = () => {
     addToCart({ ...productInfor, quantity });
+  };
+
+  const hadleAddToWishList = () => {
+    toggleLike();
   };
 
   return (
@@ -93,7 +99,10 @@ function DetailInfor({ productInfor }) {
             Add To Bag
           </div>
         </CustomButton>
-        <CustomButton style={{ marginLeft: "30px" }}>
+        <CustomButton
+          onClick={hadleAddToWishList}
+          style={{ marginLeft: "30px" }}
+        >
           <div style={{ display: "flex", justifyContent: "center" }}>
             <img
               style={{ marginRight: "10px" }}

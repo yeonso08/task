@@ -1,19 +1,27 @@
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import { Overlay, Popover, Card, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useRecoilValue, useRecoilState } from "recoil";
-import { likedProductsState } from "../../atom/heartAtom";
+import { likedProductsState, showWishModalState } from "../../atom/heartAtom";
 import textVariants from "../../styles/variants/textVariants";
 
 function WishModal() {
-  const [show, setShow] = useState(false);
   const target = useRef(null);
   const wishInfor = useRecoilValue(likedProductsState);
   const [likedProducts, setLikedProducts] = useRecoilState(likedProductsState);
+  const [showWishModal, setShowWishModal] = useRecoilState(showWishModalState);
 
   const setDelete = (id) => {
     const updatedProducts = likedProducts.filter((p) => p.id !== id);
     setLikedProducts(updatedProducts);
+  };
+
+  const handleClose = () => {
+    setShowWishModal(false);
+  };
+
+  const handleToggle = () => {
+    setShowWishModal((prevState) => !prevState);
   };
 
   return (
@@ -21,17 +29,17 @@ function WishModal() {
       <button
         ref={target}
         style={{ backgroundColor: "var(--color-bright)", border: "none" }}
-        onClick={() => setShow(!show)}
+        onClick={handleToggle}
       >
         <img src="/heart.png" alt="wishlist" />
       </button>
 
       <Overlay
         target={target.current}
-        show={show}
+        show={showWishModal}
         placement="bottom"
         rootClose
-        onHide={() => setShow(false)}
+        onHide={handleClose}
       >
         {(props) => (
           <Popover id="popover-contained" {...props}>
@@ -55,17 +63,16 @@ function WishModal() {
                       </Link>
                     </Col>
                     <Col xs={7}>
-                      <Card.Title
+                      <Link
+                        to={`/products/${item.id}`}
                         style={{
                           color: "var(--color-high-emphasis)",
                           textDecoration: "none",
                           ...textVariants.P_M_12,
                         }}
-                        as={Link}
-                        to={`/products/${item.id}`}
                       >
                         {item.title}
-                      </Card.Title>
+                      </Link>
                     </Col>
                     <Col xs={1}>
                       <button
