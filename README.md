@@ -13,6 +13,10 @@
 - **Library** : react-router-dom, axios, recoil
 - **Tool** : Git, Figma
 
+### Reference
+- **Figma** : <https://www.figma.com/file/t48OgVr3M4PZsXHXagTAE6/PWA-eCommerce-Theme-(Community)?type=design&node-id=184%3A0&mode=design&t=oSU76kmkqgIlP5IC-1>
+- **API** : <>
+
 ## 📌 주요 기능
 #### 메인 페이지
 - 라우터 연결
