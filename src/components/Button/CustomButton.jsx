@@ -1,11 +1,15 @@
 import React from "react";
 import "./Button.css";
 
-function CustomButton({ children, style, onClick, variant }) {
+function CustomButton({ children, style, onClick, variant, className }) {
   let btnClass = "customButton";
   
   if (variant === "underline") {
     btnClass = "underLineButton";
+  }
+
+  if (className) {
+    btnClass += ` ${className}`;
   }
 
   return (

@@ -4,6 +4,7 @@ import Form from "react-bootstrap/Form";
 import AlertModal from "../../components/Modal/AlertModal";
 import CustomButton from "../../components/Button/CustomButton";
 import { useNavigate } from "react-router-dom";
+import "./style.css";
 
 export default function Login() {
   const [id, setId] = useState("");
@@ -41,31 +42,35 @@ export default function Login() {
         title="Error"
         body="Please check your ID or password"
       />
-      <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3" controlId="formGroupEmail">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control
-            type="id"
-            value={id}
-            onChange={(e) => {
-              setId(e.target.value);
-            }}
-            placeholder="Enter email"
-          />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formGroupPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            type="password"
-            value={password}
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
-            placeholder="Password"
-          />
-        </Form.Group>
-        <CustomButton type="submit">Login</CustomButton>
-      </Form>
+      <div className="login-container">
+        <Form onSubmit={handleSubmit}>
+          <Form.Group className="mb-3" controlId="formGroupEmail">
+            <Form.Label>Email address</Form.Label>
+            <Form.Control
+              type="id"
+              value={id}
+              onChange={(e) => {
+                setId(e.target.value);
+              }}
+              placeholder="Enter email"
+            />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formGroupPassword">
+            <Form.Label>Password</Form.Label>
+            <Form.Control
+              type="password"
+              value={password}
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
+              placeholder="Password"
+            />
+          </Form.Group>
+          <CustomButton className={"login-button"} type="submit">
+            Login
+          </CustomButton>
+        </Form>
+      </div>
     </>
   );
 }
