@@ -8,7 +8,14 @@ function CartList({ basketItems, setReload }) {
   return (
     <Container>
       <Stack gap={3}>
-        <div style={{ color: "var(--color-primary)", marginTop: "50px" , marginBottom: "30px" , ...textVariants.H_S_34 }}>
+        <div
+          style={{
+            color: "var(--color-primary)",
+            marginTop: "50px",
+            marginBottom: "30px",
+            ...textVariants.H_S_34,
+          }}
+        >
           My Cart
         </div>
         <Card style={{ border: "none" }}>

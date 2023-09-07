@@ -12,7 +12,7 @@ export default function Login() {
   const [showAlert, setShowAlert] = useState(false);
   const navigate = useNavigate();
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async event => {
     event.preventDefault();
     setShowAlert(false);
 
@@ -51,7 +51,7 @@ export default function Login() {
             <Form.Control
               type="id"
               value={id}
-              onChange={(e) => {
+              onChange={e => {
                 setId(e.target.value);
               }}
               placeholder="Enter email"
@@ -62,7 +62,7 @@ export default function Login() {
             <Form.Control
               type="password"
               value={password}
-              onChange={(e) => {
+              onChange={e => {
                 setPassword(e.target.value);
               }}
               placeholder="Password"

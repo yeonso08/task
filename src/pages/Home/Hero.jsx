@@ -1,8 +1,23 @@
 import { Button, Card } from "react-bootstrap";
 import "./Home.css";
 import textVariants from "../../styles/variants/textVariants";
+import { useState } from "react";
 
 export default function Hero() {
+  const [studyData, setStudyData] = useState(null);
+  const getFake = () => {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then(response => {
+        return response.json();
+      })
+      .then(json => {
+        setStudyData(json);
+      })
+      .catch(error => {
+        Error(`Something Wrong: ${error}`);
+      });
+    console.log(studyData);
+  };
   return (
     <Card
       style={{
@@ -28,12 +43,20 @@ export default function Hero() {
         }}
       >
         <Card.Title
-          style={{ fontWeight: 800, fontSize: "60px", lineHeight: "84px" }}
+          style={{
+            fontWeight: 800,
+            fontSize: "60px",
+            lineHeight: "84px",
+          }}
         >
           Carry your Funk
         </Card.Title>
         <Card.Text
-          style={{ fontWeight: 500, fontSize: "28px", lineHeight: "38px" }}
+          style={{
+            fontWeight: 500,
+            fontSize: "28px",
+            lineHeight: "38px",
+          }}
         >
           Trendy handbags collection for your <br />
           party animal
@@ -46,6 +69,7 @@ export default function Hero() {
             border: "none",
             ...textVariants.P_M_16,
           }}
+          onClick={getFake}
         >
           → See more
         </Button>

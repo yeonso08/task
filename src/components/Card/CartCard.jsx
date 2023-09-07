@@ -7,14 +7,14 @@ import textVariants from "../../styles/variants/textVariants";
 function CartCard({ basketItems, setReload }) {
   const { removeFromCart } = useCart();
 
-  const handleRemove = (itemId) => {
+  const handleRemove = itemId => {
     removeFromCart(itemId);
-    setReload((prev) => !prev);
+    setReload(prev => !prev);
   };
 
   return (
     <>
-      {basketItems.map((item) => (
+      {basketItems.map(item => (
         <Card
           style={{
             border: "none",

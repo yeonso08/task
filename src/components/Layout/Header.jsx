@@ -33,7 +33,7 @@ export default function Header() {
     fetchData();
   }, []);
 
-  const handleProfileClick = (event) => {
+  const handleProfileClick = event => {
     const token = sessionStorage.getItem("token");
     if (token) {
       setShow(!show);
@@ -63,7 +63,7 @@ export default function Header() {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              {category.map((item) => (
+              {category.map(item => (
                 <Nav.Link
                   style={{
                     color: "var(--color-high-emphasis)",

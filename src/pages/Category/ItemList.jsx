@@ -66,12 +66,12 @@ function ItemList() {
             initialItem={selectedItem}
             onChange={setSelectedItem}
             style={{ width: "150px", height: "50px", marginLeft: "10px" }}
-            toggleContent={(selected) => <>{selected}</>}
+            toggleContent={selected => <>{selected}</>}
           />
         </Col>
       </Row>
       <Row style={{ marginTop: "30px", marginLeft: "60px" }}>
-        {products.map((item) => (
+        {products.map(item => (
           <Col
             key={item.id}
             md={4}

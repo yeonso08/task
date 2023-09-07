@@ -13,7 +13,7 @@ function DetailInfor({ productInfor }) {
   const { addToCart } = useCart();
   const [quantity, setQuantity] = useState(1);
   const { toggleLike } = useWish(productInfor);
-  const handleCountChange = (count) => {
+  const handleCountChange = count => {
     setQuantity(count);
   };
 

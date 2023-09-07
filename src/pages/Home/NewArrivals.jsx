@@ -60,7 +60,7 @@ function NewArrivals() {
         </Col>
       </Row>
       <Row className="scrollableRow" ref={scrollableRef}>
-        {products.map((item) => (
+        {products.map(item => (
           <Col
             key={item.id}
             md={4}

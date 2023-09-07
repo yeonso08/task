@@ -1,29 +1,28 @@
 .customButton {
-    border-color: var(--color-primary);
-    background-color: var(--color-bright);
-    color: var(--color-primary);
-    height: 44px;
-    width: 280px;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
+  border-color: var(--color-primary);
+  background-color: var(--color-bright);
+  color: var(--color-primary);
+  height: 44px;
+  width: 280px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
 }
 
 .customButton:hover {
-    background-color: var(--color-primary);
-    color: var(--color-bright);
+  background-color: var(--color-primary);
+  color: var(--color-bright);
 }
 
 .underLineButton {
-    background-color: var(--color-bright);
-    color: var(--color-primary);
-    font-size: var(--font-size-xs);
-    font-weight: var(--font-weight-semibold);
-    line-height: 24px;
-    text-decoration-line: underline;
-    border: none;
+  background-color: var(--color-bright);
+  color: var(--color-primary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  line-height: 24px;
+  text-decoration-line: underline;
+  border: none;
 }
 
 .login-button {
-    margin-top: 5px;
-  }
-  
+  margin-top: 5px;
+}

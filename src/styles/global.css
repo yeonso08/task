@@ -1,44 +1,44 @@
 :root {
-    /* Fonts */
-    --main-font: 'Inter', sans-serif;
+  /* Fonts */
+  --main-font: "Inter", sans-serif;
 
-    /* Colors */
-    --color-primary: #1B4B66;
-    --color-primary-tint: #639599;
-    --color-error: #B00020;
-    --color-highlight: #FF8C4B;
-    --color-dark: #13101E;
-    --color-bright: #FFFFFF;
-    --color-light-text: #B6B6B6;
-    --color-high-emphasis: #171520;
-    --color-low-emphasis: #626262;
-    --color-grey: #F1F1F1;
-    --color-accent: #F4F4F4;
+  /* Colors */
+  --color-primary: #1b4b66;
+  --color-primary-tint: #639599;
+  --color-error: #b00020;
+  --color-highlight: #ff8c4b;
+  --color-dark: #13101e;
+  --color-bright: #ffffff;
+  --color-light-text: #b6b6b6;
+  --color-high-emphasis: #171520;
+  --color-low-emphasis: #626262;
+  --color-grey: #f1f1f1;
+  --color-accent: #f4f4f4;
 
-    /* Font-sizes */
-    --font-size-xl: 40px;
-    --font-size-lg: 34px;
-    --font-size-md: 20px;
-    --font-size-sm: 16px;
-    --font-size-xs: 14px;
-    --font-size-xxs: 12px;
+  /* Font-sizes */
+  --font-size-xl: 40px;
+  --font-size-lg: 34px;
+  --font-size-md: 20px;
+  --font-size-sm: 16px;
+  --font-size-xs: 14px;
+  --font-size-xxs: 12px;
 
-    /* Font-weights */
-    --font-weight-bold: 700;
-    --font-weight-semibold: 600;
-    --font-weight-medium: 500;
-    --font-weight-regular: 400;
+  /* Font-weights */
+  --font-weight-bold: 700;
+  --font-weight-semibold: 600;
+  --font-weight-medium: 500;
+  --font-weight-regular: 400;
 
-    /* Line-heights */
-    --line-height-xl: 52px;
-    --line-height-lg: 44px;
-    --line-height-md: 26px;
-    --line-height-sm: 20px;
-    --line-height-xs: 18px;
-    --line-height-xxs: 16px;
+  /* Line-heights */
+  --line-height-xl: 52px;
+  --line-height-lg: 44px;
+  --line-height-md: 26px;
+  --line-height-sm: 20px;
+  --line-height-xs: 18px;
+  --line-height-xxs: 16px;
 }
 
 body {
-    font-family: var(--main-font);
-    color: var(--color-high-emphasis);
+  font-family: var(--main-font);
+  color: var(--color-high-emphasis);
 }

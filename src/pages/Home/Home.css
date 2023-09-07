@@ -1,41 +1,41 @@
 /* 큰 화면에서의 스타일 */
 @media (min-width: 1200px) {
-    .custom-card-body {
-        width: 700px;
-        height: 280px;
-    }
+  .custom-card-body {
+    width: 700px;
+    height: 280px;
+  }
 }
 
 /* 중간 크기 화면에서의 스타일 */
 @media (min-width: 768px) and (max-width: 1199px) {
-    .custom-card-body {
-        width: 70%;
-        height: auto;
-    }
+  .custom-card-body {
+    width: 70%;
+    height: auto;
+  }
 }
 
 /* 작은 화면에서의 스타일 */
 @media (max-width: 767px) {
-    .custom-card-body {
-        width: 60%;
-        height: auto;
-    }
+  .custom-card-body {
+    width: 60%;
+    height: auto;
+  }
 }
 
 .scrollableRow {
-    display: flex;
-    flex-wrap: nowrap;
-    /* 이 부분을 추가하여 항목들이 줄바꿈되지 않게 합니다. */
-    overflow-x: auto;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(155, 155, 155, 0.5) transparent;
+  display: flex;
+  flex-wrap: nowrap;
+  /* 이 부분을 추가하여 항목들이 줄바꿈되지 않게 합니다. */
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(155, 155, 155, 0.5) transparent;
 }
 
 .scrollableRow::-webkit-scrollbar {
-    display: none;
-    /* Chrome, Safari, Opera 스크롤바 숨김 */
+  display: none;
+  /* Chrome, Safari, Opera 스크롤바 숨김 */
 }
 
 .scrollableRow::-webkit-scrollbar-thumb {
-    background-color: rgba(155, 155, 155, 0.5);
+  background-color: rgba(155, 155, 155, 0.5);
 }

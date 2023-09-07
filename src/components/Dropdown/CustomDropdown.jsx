@@ -11,7 +11,7 @@ function CustomDropdown({
 }) {
   const [selectedItem, setSelectedItem] = useState(initialItem);
 
-  const handleItemClick = (item) => {
+  const handleItemClick = item => {
     setSelectedItem(item);
     if (onChange) {
       onChange(item);

@@ -3,7 +3,7 @@ import "./Button.css";
 
 function CustomButton({ children, style, onClick, variant, className }) {
   let btnClass = "customButton";
-  
+
   if (variant === "underline") {
     btnClass = "underLineButton";
   }
