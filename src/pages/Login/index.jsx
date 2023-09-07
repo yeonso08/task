@@ -32,6 +32,8 @@ export default function Login() {
     } catch (error) {
       setShowAlert(true);
     }
+    setId("");
+    setPassword("");
   };
 
   return (
