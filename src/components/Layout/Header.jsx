@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Container, Form, Nav, Navbar } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import textVariants from "../../styles/variants/textVariants";
 import WishModal from "../Modal/WishModal";
 
 export default function Header() {
   const [category, setCategory] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,9 +24,11 @@ export default function Header() {
     fetchData();
   }, []);
 
-  const handleSearch = (event) => {
-    event.preventDefault();
-    // 여기에 검색 로직 추가
+  const handleProfileClick = () => {
+    const token = sessionStorage.getItem('token');
+    if (!token) {
+      navigate('/login');
+    }
   };
 
   return (
@@ -54,7 +57,7 @@ export default function Header() {
               </Nav.Link>
             ))}
           </Nav>
-          <Form className="d-flex" onSubmit={handleSearch}>
+          <Form className="d-flex">
             <Form.Control
               type="search"
               placeholder="Search for products or brands....."
@@ -70,7 +73,7 @@ export default function Header() {
           <Navbar.Brand style={{ marginLeft: "20px" }}>
             <WishModal />
           </Navbar.Brand>
-          <Navbar.Brand style={{ marginLeft: "10px" }}>
+          <Navbar.Brand style={{ marginLeft: "10px" }} onClick={handleProfileClick}>
             <img src="/profile.png" alt="profile"></img>
           </Navbar.Brand>
           <Navbar.Brand style={{ marginLeft: "10px" }} as={Link} to="/carts">

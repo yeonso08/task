@@ -2,11 +2,14 @@ import { useState } from "react";
 import axios from "axios";
 import Form from "react-bootstrap/Form";
 import AlertModal from "../../components/Modal/AlertModal";
+import CustomButton from "../../components/Button/CustomButton";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
   const [showAlert, setShowAlert] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -20,6 +23,8 @@ export default function Login() {
 
       if (response.data && response.data.token) {
         console.log("Login successful!", response.data.token);
+        sessionStorage.setItem("token", response.data.token); // <-- 토큰 저장
+        navigate("/");
       } else {
         setShowAlert(true);
       }
@@ -30,11 +35,11 @@ export default function Login() {
 
   return (
     <>
-      <AlertModal 
-      show={showAlert} 
-      onHide={() => setShowAlert(false)} 
-      title="Error" 
-      body="Please check your ID or password"
+      <AlertModal
+        show={showAlert}
+        onHide={() => setShowAlert(false)}
+        title="Error"
+        body="Please check your ID or password"
       />
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formGroupEmail">
@@ -59,7 +64,7 @@ export default function Login() {
             placeholder="Password"
           />
         </Form.Group>
-        <button type="submit">Login</button>{" "}
+        <CustomButton type="submit">Login</CustomButton>
       </Form>
     </>
   );
